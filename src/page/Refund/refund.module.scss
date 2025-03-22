@@ -1,0 +1,146 @@
+@use '../../style/global.scss';
+
+.main{
+    height: 100vh;
+    position: relative;
+    .container{
+        @include global.mainPd();
+        .refunInfoBox{
+            .titleBox{
+                @include global.flex(space-between);
+                >.title{
+                    
+                }
+                .modalBtn{
+                    cursor: pointer;
+                }
+            }
+            .refunInfoListBox{
+                .refunInfoList{
+                    >li{
+                        @include global.flex(space-between);
+                        padding: 20px 0;
+                        border-bottom: 1px solid white;
+                        span{
+                            font-size: 12px;
+                        }
+                        .subTitle{
+                            @include global.flex();
+                            &::before{
+                                content: '';
+                                display: block;
+                                width: 24px;
+                                height: 24px;
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                                margin-right: 5px;
+                            }
+                        }
+                        .date{
+                            &::before{
+                                background-image: url('../../asset/img/date.png');
+                            }
+                        }
+                        .water{
+                            &::before{
+                                background-image: url('../../asset/img/water.png');
+                            }
+                        }
+                        .time{
+                            &::before{
+                                background-image: url('../../asset/img/time.png');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .refundModal{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.418);
+        left: 0;
+        top: 0;
+        display: none;
+        .refundModalCon{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: white;
+            padding: 10%;
+            .close{
+                text-align: end;
+                margin-bottom: 10px;
+                >span{
+                    color: black;
+                    cursor: pointer;
+                }
+            }
+            .title{
+                font-size: 24px;
+                font-family: "GmarketSansMedium";
+                margin-bottom: 20px;
+                line-height: 1.3;
+                color: black;
+            }
+            .content{
+                .settingBox{
+                    @include global.flex(flex-start,flex-start){
+                        flex-direction: column;
+                        margin-bottom: 10px;
+                    };
+                    
+                    .subTitle{
+                        margin-bottom: 10px;
+                        color: black;
+                    }
+                    .dateSetting{
+                        width: 100%;
+                        .dateList{
+                            @include global.flex();
+                            overflow-x: auto;
+                            white-space: nowrap;
+                            >li{
+                                background-color: rgb(240, 240, 240);
+                                color: black;
+                                border: solid 1px black;
+                                border-radius: 100px;
+                                padding: 5px;
+                                margin-right: 5px;
+                                font-size: 12px;
+                                cursor: pointer;
+                            }
+                            >li.active{
+                                background-color: #4673B7;
+                                color: white;
+                            }
+                        }
+                    }
+                    .dateList::-webkit-scrollbar{
+    
+                    }
+                }
+    
+                .settingBox{
+                    .timeBox{
+                        @include global.flex();
+                        >select{
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .refundModal.active{
+        display: block;
+    }
+}
+

@@ -1,0 +1,20 @@
+@use '../../style/global.scss';
+
+.main{
+    .container{
+        @include global.mainPd();
+        .menuLi{
+            // @include global.flex(space-between){
+            // };
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            >li{
+                a{
+                    
+                }
+            }
+        }
+    }
+}

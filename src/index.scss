@@ -1,0 +1,11 @@
+@import './style/global.scss';
+
+#root {
+    background-color: $main;
+    // background-color: rgb(214, 214, 214);
+    max-width: 640px;
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0 auto;
+    // overflow: hidden;
+}

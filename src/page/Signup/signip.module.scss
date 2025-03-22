@@ -1,0 +1,55 @@
+@use '../../style/global.scss';
+
+.main{
+    .container{
+        @include global.mainPd();
+        .signupFormBox{
+            .inputBox{
+                @include global.flex(flex-start,flex-start){
+                    flex-direction: column;
+                    margin-top: 30px
+                };
+                .inputFeld{
+                    width: 100%;
+                    .inputTitle{
+                        >label{
+                            margin-bottom: 10px
+                        }
+                    }
+
+                    .inputContent{
+                        @include global.flex();
+                        >input{
+                            @include global.radius();
+                            width: 100%;
+                            padding: 2%;
+                            font-size: 12px;
+                            border: 1px solid black;
+                        }
+                        .emailCheckBtn{
+
+                        }
+                    }
+                }
+                .errMessage{
+                    margin-top: 10px;
+                    font-size: 14px;
+                }
+            }
+            .inputBox.err{
+                .inputFeld{
+                    .inputContent{
+                        >input{
+                            border: none;
+                            outline: 2px solid red;
+                        }
+                    }
+                }
+                .errMessage{
+                    color: red;
+                }
+            }
+        }
+        
+    }
+}

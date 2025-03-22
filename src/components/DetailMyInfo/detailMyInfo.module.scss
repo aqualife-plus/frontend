@@ -1,0 +1,56 @@
+@use '../../style/global.scss';
+
+
+.myInfoBox {
+    background-color: global.$sub2;
+    padding: 20px 30px;
+    @include global.radius();
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+
+    .edit {
+        text-align: end;
+        margin-bottom: 5px;
+
+        >a {
+            font-size: 14px;
+            color: white;
+        }
+    }
+
+    .content {
+        @include global.flex();
+
+        .left {
+            .imgBox {
+                width: 80px;
+                aspect-ratio: 1;
+
+                >img {
+                    @include global.radius();
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .right {
+            @include global.flex(flex-start, flex-start) {
+                flex-direction: column;
+            }
+
+            ;
+            margin-left: 20px;
+
+            span {
+                line-height: 1.3;
+            }
+
+            .title {}
+
+            .subTitle {
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use '../style/variables' as var;
+
+@mixin mainPd(){
+    padding: 0 20px;
+}
+
+@mixin headerPd(){
+    padding: 20px;
+}
+
+@mixin flex($x: flex-start, $y: center) {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+    @content;
+}
+
+@mixin radius($x: 10px){
+    border-radius: $x;
+}
+
+@mixin textEllipsis($num){
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+    @content;
+}
+
+@mixin detailMenuBox(){
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+    background-color: var.$sub2;
+    @include radius();
+    padding: 10%;
+}
+
+@mixin detailMenuTitle(){
+    text-align: center;
+    margin-bottom: 10px
+}
+
+@mixin shadow(){
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

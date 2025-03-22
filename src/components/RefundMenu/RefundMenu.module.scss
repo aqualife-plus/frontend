@@ -1,0 +1,29 @@
+@use '../../style/global.scss';
+
+.refundMenuBox{
+    @include global.detailMenuBox();
+    .title{
+        >h3{
+            @include global.detailMenuTitle();
+        }
+    }
+    .box{
+        text-align: center;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .circular{
+            width: 50%;
+            aspect-ratio: 1;
+        }
+
+        .timerBox{
+            >span{
+                font-size: 12px;
+            }
+        }
+    }
+}

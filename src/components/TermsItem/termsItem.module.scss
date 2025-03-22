@@ -1,0 +1,57 @@
+@use '../../style/global.scss';
+
+.termsItemWrap{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: rgba(0, 0, 0, 0.363);
+    .title{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        background-color: black;
+        .termsTitle{
+            padding: 10px;
+            font-family: "GmarketSansMedium";
+            font-size: 24px;
+        }
+        .close{
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+    }
+    .itemBox{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        max-width: 640px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(150, 150, 150);
+        padding: 50px;
+        overflow-y: scroll;
+        .content{
+            .contentList{
+                >li{
+                    margin-bottom: 30px;
+                    .subTitle{
+                        font-size: 18px;
+                        font-family: "GmarketSansMedium";
+                        margin-bottom: 5px;
+                    }
+                    .info{
+                        font-size: 14px;
+                        line-height: 1.3;
+                    }
+                }
+            }
+        }
+    }
+}

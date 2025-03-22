@@ -1,0 +1,14 @@
+@use '../../style/global.scss';
+
+
+.defaultBtn{
+    margin-top: 40px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px;
+    @include global.radius();
+    &:disabled {
+        color: rgba(255, 255, 255, 0.5);
+    }
+}

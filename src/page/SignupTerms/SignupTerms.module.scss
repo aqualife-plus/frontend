@@ -1,0 +1,45 @@
+@use '../../style/global.scss';
+
+
+
+.main {
+    @include global.mainPd();
+    padding-top: 30%;
+    .logo{
+        @include global.flex(center);
+        margin-bottom: 20px;
+        >img{
+            cursor: pointer;
+        }
+    }
+    .container {
+        .title {
+            font-family: "GmarketSansBold", sans-serif;
+            font-size: 32px;
+        }
+        form{
+            margin-top: 30px;
+            .allCheckBOx{
+
+            }
+            .termsList{
+                >li{
+                    padding: 10px 0;
+                    >input{
+
+                    }
+                    >label{
+
+                    }
+                }
+            }
+
+            .termsBox{
+                display: none;
+            }
+            .termsBox.active{
+                display: block;
+            }
+        }
+    }
+}

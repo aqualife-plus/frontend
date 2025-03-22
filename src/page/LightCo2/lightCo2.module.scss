@@ -1,0 +1,145 @@
+@use '../../style/global.scss';
+
+.main{
+    position: relative;
+    min-height: 100vh;
+    .container{
+        @include global.mainPd();
+        .stateWrap{
+            width: 360px;
+            margin: auto;
+            @include global.flex(){
+                flex-direction: column;
+            };
+            .stateBox{
+                width: 100%;
+                border: 3px solid rgb(255, 255, 255);
+                padding: 30px;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                @include global.radius();
+                @include global.flex(){
+                    flex-direction: column;
+                };
+                .imgBox{
+                    >img{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                >span{
+                    margin-top: 10px;
+                }
+            }
+            .btnBox{
+                margin-top: 20px;
+                width: 100%;
+                @include global.flex(space-between);
+                >button{
+                    font-size: 12px;
+                    padding: 10px;
+                    @include global.radius();
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+                .off{
+                    width: 45%;
+                    background-color: white;
+                    color: black;
+                }
+                .on{
+                    width: 45%;
+                    background-color: black;
+                    color: white;
+                }
+            }
+        }
+        .alarmListBox{
+            margin-top: 50px;
+            .top{
+                position: relative;
+                @include global.flex();
+                >.left{
+                    width: 50px;
+                    height: 50px;
+                    background-color: aquamarine;
+                    >img{
+
+                    }
+                }
+                >.right{
+                    margin-left: 10px;
+                    @include global.flex(flex-start,flex-start){
+                        flex-direction: column;
+                    };
+                    >span{
+                        line-height: 1.3;
+                    }
+                    .title{
+
+                    }
+                    .alarmNum{
+                        font-size: 12px;
+                    }
+                }
+                .plus{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    font-size: 28px;
+                    cursor: pointer;
+                }
+            }
+            .bottom{
+                padding-left: 60px;
+                .alarmList{
+                    >li{
+                        @include global.flex();
+                        border-bottom: 1px solid black;
+                        margin-top: 20px;
+                        padding-bottom: 10px;
+                        cursor: pointer;
+                        .timeBox{
+                            flex: 1;
+                            .time{
+
+                            }
+                        }
+                        .toggleBox{
+                            >label{
+                                cursor: pointer;
+                                background-color: gray;
+                                width: 80px;
+                                height: 20px;
+                                position: relative;
+                                border-radius: 80px;
+                                .one{
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 10%;
+                                    transform: translate(-10%, -50%);
+                                    display: block;
+                                    width: 15px;
+                                    aspect-ratio: 1;
+                                    background-color: white;
+                                    transition: 0.5s ease-out;
+                                    border-radius: 100%;
+                                }
+                            }
+                            .check{
+                                    background-color: #DBFDE0;
+                                    .one{
+                                        top: 50%;
+                                        left: 90%;
+                                        transform: translate(-90%, -50%);
+                                        background-color: black;
+                                    }
+                            }
+                            >input{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

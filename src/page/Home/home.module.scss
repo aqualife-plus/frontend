@@ -1,0 +1,14 @@
+@use '../../style/global.scss';
+
+.main{
+    .container{
+        @include global.mainPd();
+        .listLi{
+            >li{
+                +li{
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

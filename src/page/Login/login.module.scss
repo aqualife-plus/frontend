@@ -1,0 +1,71 @@
+@use '../../style/global.scss';
+
+
+.main{
+    @include global.mainPd();
+    padding-top: 30%;
+    .container{
+        .logoBox{
+            >a{
+                >img{
+                    margin: auto;
+                }
+            }
+        }
+
+        .loginWrap{
+            form{
+                .inputBox{
+                    margin-top: 30px;
+                    .name{
+                
+                    }
+                    .inputField{
+                        width: 100%;
+                        padding: 10px;
+                        border: none;
+                        border-bottom: 1px solid white;
+                        background: none;
+                        
+                        &:focus{
+                            border: none;
+                            outline: none;
+                            border-bottom: 1px solid rgb(255, 255, 255);
+                        }
+                    }
+                }
+                .errWrap{
+                    .errMessage{
+                        display: block;
+                        color: red;
+                        margin-top: 10px;
+                        font-size: 12px
+                    }
+                }
+            }
+            .loginFindBox{
+                .loginFindList{
+                    @include global.flex(center);
+                    >li{
+                        margin-top: 30px;
+                        padding: 0 20px;
+                        position: relative;
+                        +li{
+                            &::before{
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                width: 1px;
+                                height: 100%;
+                                background-color: rgb(105, 105, 105);
+                            }
+                        }
+                        >a{
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

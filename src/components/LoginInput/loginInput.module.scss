@@ -1,0 +1,19 @@
+.inputBox{
+    margin-top: 30px;
+    .name{
+
+    }
+    .inputField{
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid white;
+        background: none;
+        
+        &:focus{
+            border: none;
+            outline: none;
+            border-bottom: 2px solid black;
+        }
+    }
+}

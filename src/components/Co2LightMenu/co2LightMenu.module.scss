@@ -1,0 +1,65 @@
+@use '../../style/global.scss';
+
+
+.co2LightMenuBox{
+    @include global.detailMenuBox();
+    .title{
+        >h3{
+            @include global.detailMenuTitle();
+        }
+    }
+    .container{
+        height: 80%;
+        .content{
+            @include global.flex(space-around){
+                flex-direction: column;
+            }
+            height: 100%;
+            .imgBox{
+                width: 50%;
+                aspect-ratio: 1;
+                >img{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .toggleBox{
+                >label{
+                    cursor: pointer;
+                    background-color: #DBFDE0;
+                    width: 80px;
+                    height: 20px;
+                    position: relative;
+                    border-radius: 80px;
+                    .one{
+                        position: absolute;
+                        top: 50%;
+                        left: 10%;
+                        transform: translate(-10%, -50%);
+                        display: block;
+                        width: 15px;
+                        aspect-ratio: 1;
+                        background-color: black;
+                        transition: 0.5s ease-out;
+                        border-radius: 100%;
+                    }
+                }
+                .check{
+                        background-color: gray;
+                        .one{
+                            top: 50%;
+                            left: 90%;
+                            transform: translate(-90%, -50%);
+                            background-color: white;
+                        }
+                }
+                >input{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+

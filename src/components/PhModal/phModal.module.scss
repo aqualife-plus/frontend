@@ -1,0 +1,72 @@
+@use '../../style/global.scss';
+
+.modalWrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.315);
+    display: none;
+    &.active{
+        display: block;
+    }
+    .modal{
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 50px 20px;
+        .close{
+            text-align: end;
+            >span{
+                cursor: pointer;
+                color: black;
+            }
+        }
+
+        .settingWrap{
+            >.title{
+                display: block;
+                color: black;
+                font-size: 18px;
+                font-weight: bold;
+                margin: 20px 0 10px 0;
+            }
+
+            >form{
+                .content{
+                    @include global.flex(space-between,flex-start){
+                        flex-direction: column;
+                    };
+                    label{
+                        color: black;
+                        text-align: center;
+                    }
+
+                    .phValueBox{
+                        @include global.flex(){
+                            width: 100%;
+                            gap: 10px;
+                            flex-wrap: wrap;
+                            margin-bottom: 10px;
+                        }
+                        
+                        >label{
+                            width: 110px;
+                            font-size: 14px;
+                        }
+
+                        >input{
+                            flex: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
